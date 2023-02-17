@@ -1,5 +1,6 @@
 .header {
   position: fixed;
+  background-color: #fff;
   z-index: 11;
   top: 0;
   left: 0;
@@ -8,9 +9,14 @@
   &__content {
     display: flex;
     justify-content: space-between;
-    &_logo{
-      a{
-        color: green;
+    padding: 20px 0;
+
+    &_logo {
+      height: 52px;
+      width: 181px;
+
+      a {
+        display: block;
       }
     }
   }

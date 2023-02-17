@@ -1,15 +1,16 @@
 import React from 'react';
 import {Link} from "gatsby";
-import {header, header__content, header__content_logo} from './header.module.scss'
+import * as styles from './header.module.scss'
+import logo from '../../../images/icons/logo.svg'
 
 const Header = () => {
   return (
-    <header className={header}>
+    <header className={styles.header}>
       <div className='container'>
-        <div className={header__content}>
-          <div className={header__content_logo}>
+        <div className={styles.header__content}>
+          <div className={styles.header__content_logo}>
             <Link to={'/'}>
-              dd
+              <img src={logo}  alt="logo"/>
             </Link>
           </div>
         </div>
