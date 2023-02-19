@@ -1,6 +1,7 @@
 import React from 'react';
 import * as styles from "./cart.module.scss"
 import Asset from "../Asset/Asset";
+import Advertising from "../../Advertising/Advertising";
 import {Link} from "gatsby";
 
 const Cart = () => {
@@ -12,6 +13,7 @@ const Cart = () => {
       <ul>
         <Asset/>
       </ul>
+      <Advertising/>
       <p>
         Promo Code? <Link to={'/'}>Enter Code</Link>
       </p>

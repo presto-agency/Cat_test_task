@@ -1,0 +1,52 @@
+.advertising {
+  margin: 45px 0 0 0;
+  padding: 15px 10px;
+  background-color: #FFFBEC;
+  border: 1px solid #9E9E9E;
+  border-radius: 9px;
+
+  h3 {
+    margin: 15px 0 13px;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+
+    &_img {
+      flex: 0 0 144px;
+      height: 115px;
+      margin: 0 17px 0 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &_data {
+      p {
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: 300;
+        margin: 0 0 10px 0;
+      }
+      span{
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: 300;
+        display: inline-block;
+        width: 50%;
+        &:last-of-type{
+          text-decoration: line-through;
+          opacity: .6;
+        }
+      }
+    }
+  }
+
+}
