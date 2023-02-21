@@ -67,7 +67,7 @@ const Cart = () => {
             </p>
           </li>
         </ul>
-        <MyButton className={`${myButton} ${black}`} description={'Checkout now'}/>
+        <Link to={'/checkout'} className={`${myButton} ${black}`}>Checkout now</Link>
       </div>
     </section>
   );
