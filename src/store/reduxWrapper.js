@@ -7,7 +7,7 @@ import {Provider} from "react-redux";
 import {legacy_createStore as createStore} from 'redux'
 
 const rootReducer = combineReducers({
-  count: productReducer,
+  assets: productReducer,
 })
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))

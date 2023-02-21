@@ -4,9 +4,12 @@ import {myButton, black} from "../MyButton/myButton.module.scss"
 import Asset from "../Asset/Asset";
 import Advertising from "../../Advertising/Advertising";
 import {Link} from "gatsby";
-import MyButton from "../MyButton/MyButton";
+import {useSelector} from "react-redux";
 
 const Cart = () => {
+  const products = useSelector(state => state.assets.product)
+
+
   return (
     <section className={styles.cart}>
       <div className={styles.cart__top}>
@@ -14,7 +17,7 @@ const Cart = () => {
           Your Cart
         </h2>
         <ul>
-          <Asset/>
+          {products.map(product => <Asset key={product.id} name={product.name} price={product.price} src={product.src} />)}
         </ul>
         <Advertising/>
         <p>

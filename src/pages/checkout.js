@@ -6,7 +6,6 @@ const Checkout = () => {
   return (
     <Layout title={'Checkout page'}>
       <div className='root'></div>
-      <Asset/>
     </Layout>
   );
 };

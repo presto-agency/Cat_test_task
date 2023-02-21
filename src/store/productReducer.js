@@ -1,5 +1,18 @@
 const defaultState = {
-  count: 1
+  count: 1,
+  product:
+    [{
+      name: 'Bouclé Bungalow “Creme” Cover',
+      price: 239,
+      src: 'images/white.webp',
+      id: 0
+    },
+      {
+        name: 'Replacement Cover in “Catnip”',
+        price: 129,
+        src: 'images/green.webp',
+        id: 1
+      }],
 }
 
 export const INCREMENT = "INCREMENT";

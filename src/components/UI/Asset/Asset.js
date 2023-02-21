@@ -1,38 +1,39 @@
-import React from 'react';
-import asset from "../../../images/pictures/white.webp";
+import React, {useState} from 'react';
 import * as styles from "./asset.module.scss"
 import {useDispatch, useSelector} from "react-redux";
 import {decrementCreator, incrementCreator} from "../../../store/productReducer";
 
 
-const Asset = () => {
+const Asset = ({name, price, src}) => {
   const dispatch = useDispatch()
-  const count = useSelector(state => state.count.count)
+  // const count = useSelector(state => state.assets.count)
 
-  const addCash = (count) => {
-    dispatch(incrementCreator(count))
-  }
+  // const decValue = (count) => {
+  //   dispatch(incrementCreator(count))
+  // }
+  //
+  // const incValue = (count) => {
+  //   dispatch(decrementCreator(count))
+  // }
 
-  const removeCash = (count) => {
-    dispatch(decrementCreator(count))
-  }
+  const [count, setCount] = useState(1)
 
   return (
     <li className={styles.asset}>
       <div className={styles.asset__img}>
-        <img src={asset} alt="asset"/>
+        <img src={src} alt="asset"/>
       </div>
       <div className={styles.asset__content}>
         <p>
-          Bouclé Bungalow “Creme” Cover
+          {name}
         </p>
         <div className={styles.asset__content_nav}>
           <div>
-            <button onClick={removeCash}></button>
+            <button disabled={count <= 0} onClick={() => setCount(count - 1)}></button>
             <span>{count}</span>
-            <button onClick={addCash} className={styles.variant}></button>
+            <button onClick={() => setCount(count + 1)} className={styles.variant}></button>
           </div>
-          <span>239</span>
+          <span>{(Math.round((price * count) * 100) / 100).toFixed(2)}</span>
         </div>
       </div>
     </li>
