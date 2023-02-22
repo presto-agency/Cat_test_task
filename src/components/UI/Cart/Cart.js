@@ -14,24 +14,21 @@ const Cart = () => {
       total: 0
     }
   ]);
-  const returnTotal = (data) => {
-    if (!!total.find(x => x.id === data.id)) {
-      let array2 = [...total]
-      array2.map((item) => {
-        if (item.id === data.id) {
-          item.total = data.total
-        }
-      })
 
-      setTotal(
-        [...array2]
-      )
-    } else {
-      setTotal(
-        [...total, data]
-      )
-    }
-    console.log(total)
+  const returnTotal = (data) => {
+    let array2 = [...total]
+    array2.map((item) => {
+      if (item.id === data.id) {
+        item.total = data.total
+        setTotal(
+          [...array2]
+        )
+      } else {
+        setTotal(
+          [...total, data]
+        )
+      }
+    })
   }
 
   return (
