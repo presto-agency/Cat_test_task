@@ -4,19 +4,26 @@ import {useDispatch, useSelector} from "react-redux";
 import {decrementCreator, incrementCreator} from "../../../store/productReducer";
 
 
-const Asset = ({name, price, src}) => {
+const Asset = ({name, price, src, returnTotal, id}) => {
   const dispatch = useDispatch()
-  // const count = useSelector(state => state.assets.count)
-
-  // const decValue = (count) => {
-  //   dispatch(incrementCreator(count))
-  // }
-  //
-  // const incValue = (count) => {
-  //   dispatch(decrementCreator(count))
-  // }
-
   const [count, setCount] = useState(1)
+  const totalPrice = (Math.round((price * count) * 100) / 100).toFixed(2);
+  const product = {
+    'id':id,
+    'total': totalPrice
+  }
+
+
+  const decValue = () => {
+    setCount(count - 1)
+    returnTotal(product)
+  }
+
+  const incValue = () => {
+    setCount(count + 1)
+    returnTotal(product)
+  }
+
 
   return (
     <li className={styles.asset}>
@@ -29,11 +36,11 @@ const Asset = ({name, price, src}) => {
         </p>
         <div className={styles.asset__content_nav}>
           <div>
-            <button disabled={count <= 0} onClick={() => setCount(count - 1)}></button>
+            <button disabled={count <= 0} onClick={decValue}></button>
             <span>{count}</span>
-            <button onClick={() => setCount(count + 1)} className={styles.variant}></button>
+            <button className={styles.variant} onClick={incValue}></button>
           </div>
-          <span>{(Math.round((price * count) * 100) / 100).toFixed(2)}</span>
+          <span>{totalPrice}</span>
         </div>
       </div>
     </li>

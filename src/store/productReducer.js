@@ -1,5 +1,4 @@
 const defaultState = {
-  count: 1,
   product:
     [{
       name: 'Bouclé Bungalow “Creme” Cover',
@@ -13,21 +12,19 @@ const defaultState = {
         src: 'images/green.webp',
         id: 1
       }],
+  totalPrice: 0,
 }
 
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
+export const TOTALPRICE = "TOTALPRICE";
 
 export const productReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case INCREMENT:
-      return {...state, count: state.count + 1}
-    case DECREMENT:
-      return {...state, count: state.count - 1}
+
+    case TOTALPRICE:
+      return {...state, totalPrice: state.totalPrice}
     default:
       return state
   }
 }
 
-export const incrementCreator = (payload) => ({type: INCREMENT, payload})
-export const decrementCreator = (payload) => ({type: DECREMENT, payload})
+export const setTotalPrice = (payload) => ({type: TOTALPRICE, payload})
