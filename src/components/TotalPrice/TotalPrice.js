@@ -1,8 +1,24 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import * as styles from "./totalPrice.module.scss";
 import {Link} from "gatsby";
 
-const TotalPrice = () => {
+const TotalPrice = ({products = []}) => {
+
+  const [totalPrice, setTotalPrice] = useState(0)
+
+  useEffect(() => {
+    setTotalPrice(0)
+    for (let i = 0; i < products.length; i++) {
+      setTotalPrice(prevPrice => prevPrice + (products[i].count * products[i].price))
+    }
+  }, [products, setTotalPrice])
+
+  // console.log('totalPrice'+ totalPrice)
+
+
+  if (products.length === 0 && totalPrice === 0) {
+    return <p>loading</p>
+  }
   return (
     <div className={styles.totalPrice}>
       <ul>
@@ -12,7 +28,7 @@ const TotalPrice = () => {
               Subtotal
             </small>
             <span>
-              $368.00
+              ${totalPrice}
             </span>
           </p>
         </li>

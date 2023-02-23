@@ -23,16 +23,11 @@ const Checkout = () => {
               <div className="navbar__container">
                 <ul>
                   {products.map(product => <Asset
-                    key={product.id}
-                    name={product.name}
-                    price={product.price}
-                    src={product.src}
-                    id={product.id}
-                    // returnTotal={returnTotal}
+                    product={product}
                   />)}
                 </ul>
                 <Promo/>
-                <TotalPrice/>
+                <TotalPrice products={products}/>
               </div>
               <MyButton className='myButton black' description={'Pay now'}/>
               <Advertising/>

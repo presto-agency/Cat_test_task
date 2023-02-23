@@ -8,30 +8,30 @@ import TotalPrice from "../TotalPrice/TotalPrice";
 import Promo from "../Promo/Promo";
 
 const Cart = () => {
+
   const products = useSelector(state => state.assets.product)
-  const [total, setTotal] = useState([
-    {
-      id: 0,
-      total: 0
-    }
-  ]);
+  // const [total, setTotal] = useState([
+  //   {
+  //     id: 0,
+  //     total: 0
+  //   }
+  // ]);
 
-  const returnTotal = (data) => {
-    let array2 = [...total]
-    array2.map((item) => {
-      if (item.id === data.id) {
-        item.total = data.total
-        setTotal(
-          [...array2]
-        )
-      } else {
-        setTotal(
-          [...total, data]
-        )
-      }
-    })
-  }
-
+  // const returnTotal = (data) => {
+  //   let array2 = [...total]
+  //   array2.map((item) => {
+  //     if (item.id === data.id) {
+  //       item.total = data.total
+  //       setTotal(
+  //         [...array2]
+  //       )
+  //     } else {
+  //       setTotal(
+  //         [...total, data]
+  //       )
+  //     }
+  //   })
+  // }
   return (
     <section className={styles.cart}>
       <div className={styles.cart__top}>
@@ -40,18 +40,14 @@ const Cart = () => {
         </h2>
         <ul>
           {products.map(product => <Asset
-            key={product.id}
-            name={product.name}
-            price={product.price}
-            src={product.src}
-            id={product.id}
-            returnTotal={returnTotal}
+            product={product}
+            // returnTotal={returnTotal}
           />)}
         </ul>
         <Advertising/>
         <Promo/>
       </div>
-      <TotalPrice/>
+      <TotalPrice products={products}/>
       <Link to={'/checkout'} className='myButton black'>Checkout now</Link>
     </section>
   );

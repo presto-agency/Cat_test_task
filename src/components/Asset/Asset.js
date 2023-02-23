@@ -1,43 +1,49 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import * as styles from "./asset.module.scss"
+import {useDispatch} from "react-redux";
+
+import {setPrice} from "../../store/productReducer";
 
 
-const Asset = ({name, price, src, returnTotal, id}) => {
-  const [count, setCount] = useState(1)
-  const totalPrice = (Math.round((price * count) * 100) / 100).toFixed(2);
-  const product = {
-    'id':id,
-    'total': totalPrice
-  }
+const Asset = ({product = {}}) => {
+  const dispatch = useDispatch()
+
+  const [prod, setProduct] = useState(product)
+  // const totalPrice = (Math.round((price * count) * 100) / 100).toFixed(2);
 
 
   const decValue = () => {
-    setCount(count - 1)
-    returnTotal(product)
+    setProduct(prev => ({...prev, count: prev.count - 1}))
+    // dispatch(setPrice(product))
   }
 
   const incValue = () => {
-    setCount(count + 1)
-    returnTotal(product)
+    setProduct(prev => ({...prev, count: prev.count + 1}))
+    // dispatch(setPrice(product))
   }
+  useEffect(() => {
+    dispatch(setPrice(prod))
+  }, [prod])
 
-
+  if (Object.keys(prod).length === 0) {
+    return <p>Loading</p>
+  }
   return (
     <li className={styles.asset}>
       <div className={styles.asset__img}>
-        <img src={src} alt="asset"/>
+        <img src={prod.src} alt="asset"/>
       </div>
       <div className={styles.asset__content}>
         <p>
-          {name}
+          {prod.name}
         </p>
         <div className={styles.asset__content_nav}>
           <div>
-            <button disabled={count <= 0} onClick={decValue}></button>
-            <span>{count}</span>
+            <button disabled={prod.count <= 1} onClick={decValue}></button>
+            <span>{prod.count}</span>
             <button className={styles.variant} onClick={incValue}></button>
           </div>
-          <span>{totalPrice}</span>
+          <span>{prod.count * prod.price}</span>
         </div>
       </div>
     </li>
