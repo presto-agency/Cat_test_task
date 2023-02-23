@@ -6,6 +6,7 @@ import TotalPrice from "../components/TotalPrice/TotalPrice";
 import {Link} from "gatsby";
 import MyButton from "../components/UI/MyButton/MyButton";
 import Advertising from "../components/Advertising/Advertising";
+import Promo from "../components/Promo/Promo";
 
 const Checkout = () => {
   const products = useSelector(state => state.assets.product)
@@ -30,6 +31,7 @@ const Checkout = () => {
                     // returnTotal={returnTotal}
                   />)}
                 </ul>
+                <Promo/>
                 <TotalPrice/>
               </div>
               <MyButton className='myButton black' description={'Pay now'}/>
