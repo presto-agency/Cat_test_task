@@ -3,5 +3,21 @@
 
   &__content {
     display: flex;
+
+    &_form {
+      flex: 1 1;
+      margin: 0 118px 0 0;
+    }
+
+    .navbar {
+      flex: 0 1 375px;
+
+      &__container {
+        background-color: #fff;
+        padding: 28px 15px;
+        border: 1px solid #9E9E9E;
+        border-radius: 9px;
+      }
+    }
   }
 }

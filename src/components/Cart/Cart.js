@@ -52,6 +52,7 @@ const Cart = () => {
         <Promo/>
       </div>
       <TotalPrice/>
+      <Link to={'/checkout'} className='myButton black'>Checkout now</Link>
     </section>
   );
 };

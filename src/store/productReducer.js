@@ -3,13 +3,13 @@ const defaultState = {
     [{
       name: 'Bouclé Bungalow “Creme” Cover',
       price: 239,
-      src: 'images/white.webp',
+      src: '/images/white.webp',
       id: 0
     },
       {
         name: 'Replacement Cover in “Catnip”',
         price: 129,
-        src: 'images/green.webp',
+        src: '/images/green.webp',
         id: 1
       }],
   totalPrice: 0,

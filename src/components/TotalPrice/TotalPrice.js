@@ -50,7 +50,6 @@ const TotalPrice = () => {
           </p>
         </li>
       </ul>
-      <Link to={'/checkout'} className='myButton black'>Checkout now</Link>
     </div>
   );
 };
