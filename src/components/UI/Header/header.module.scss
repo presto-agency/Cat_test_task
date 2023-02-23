@@ -6,6 +6,10 @@
   left: 0;
   width: 100vw;
 
+  &.checkout {
+    background-color: initial;
+  }
+
   &__content {
     display: flex;
     justify-content: space-between;

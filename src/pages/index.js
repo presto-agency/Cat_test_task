@@ -6,8 +6,9 @@ import Cart from "../components/UI/Cart/Cart";
 export default function Home() {
   return(
     <Layout title={'Home page'}>
-      <div className='root'></div>
-      <Cart/>
+      <div className="cartWrapper">
+        <Cart/>
+      </div>
     </Layout>
   )
 }
