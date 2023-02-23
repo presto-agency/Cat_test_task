@@ -1,1 +1,3 @@
-export { default as wrapRootElement } from './src/store/reduxWrapper';
+import {ReduxWrapper} from "./src/store/reduxWrapper";
+
+export const wrapRootElement = ReduxWrapper

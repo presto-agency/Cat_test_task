@@ -1,7 +1,6 @@
 import React from 'react';
 import asset from "../../images/pictures/cat.webp";
 import * as styles from "./advertising.module.scss";
-import * as btnStyles from "../UI/MyButton/myButton.module.scss";
 
 import MyButton from "../UI/MyButton/MyButton";
 
@@ -25,7 +24,7 @@ const Advertising = () => {
           <span>
             $129.00
           </span>
-          <MyButton className={btnStyles.myButton} description={'Add now'}/>
+          <MyButton className='myButton' description={'Add now'}/>
         </div>
       </div>
     </div>

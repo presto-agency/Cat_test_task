@@ -11,6 +11,6 @@ const rootReducer = combineReducers({
 })
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
-export default ({ element }) => <Provider store={store}>{element}</Provider>
+export const ReduxWrapper =  ({ element }) => <Provider store={store}>{element}</Provider>
 
 

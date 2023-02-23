@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import * as styles from "./cart.module.scss"
-import {myButton, black} from "../MyButton/myButton.module.scss"
 import Asset from "../Asset/Asset";
 import Advertising from "../../Advertising/Advertising";
 import {Link} from "gatsby";
@@ -98,7 +97,7 @@ const Cart = () => {
             </p>
           </li>
         </ul>
-        <Link to={'/checkout'} className={`${myButton} ${black}`}>Checkout now</Link>
+        <Link to={'/checkout'} className='myButton black'>Checkout now</Link>
       </div>
     </section>
   );
