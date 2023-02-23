@@ -3,14 +3,19 @@ import Layout from "../components/Layout";
 
 const Checkout = () => {
   return (
-    <Layout title={'Checkout page'}>
-      <form action="#" className="form">
+    <Layout title={'Checkout'}>
+      <div className="checkout">
         <div className="container">
-          <h1>
-            hello
-          </h1>
+          <div className="checkout__content">
+            <div className='checkout__content_form'>
+
+            </div>
+            <div className='checkout__content_navbar'>
+
+            </div>
+          </div>
         </div>
-      </form>
+      </div>
     </Layout>
   );
 };

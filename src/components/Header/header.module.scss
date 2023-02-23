@@ -12,15 +12,29 @@
 
   &__content {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 20px 0;
 
     &_logo {
-      height: 52px;
-      width: 181px;
+      display: flex;
+      align-items: center;
 
       a {
-        display: block;
+        height: 52px;
+        width: 181px;
+        @media (max-width: 767px) {
+          width: 100px;
+          height: 30px;
+        }
+      }
+    }
+
+    &_description {
+      width: 100%;
+
+      h1 {
+        text-align: center;
       }
     }
   }

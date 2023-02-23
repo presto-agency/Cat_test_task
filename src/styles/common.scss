@@ -35,6 +35,21 @@ body {
   padding: 92px 0 0 0;
 }
 
+h1 {
+  font-family: "CooperBt";
+  font-size: 60px;
+  line-height: 72px;
+  font-weight: 400;
+  @media (max-width: 1023px) {
+    font-size: 48px;
+    line-height: 50px;
+  }
+  @media (max-width: 767px) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
 
 
 

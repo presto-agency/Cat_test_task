@@ -15,7 +15,7 @@ const Layout = ({children, title = 'CatTestTask'}) => {
         <Header title={title}/>
         <div className='root'></div>
         {children}
-        {title === 'Checkout page'&& <Footer/>}
+        {title === 'Checkout'&& <Footer/>}
       </div>
     </>
   )

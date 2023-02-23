@@ -5,6 +5,7 @@ import Advertising from "../Advertising/Advertising";
 import {Link} from "gatsby";
 import {useSelector} from "react-redux";
 import TotalPrice from "../TotalPrice/TotalPrice";
+import Promo from "../Promo/Promo";
 
 const Cart = () => {
   const products = useSelector(state => state.assets.product)
@@ -48,9 +49,7 @@ const Cart = () => {
           />)}
         </ul>
         <Advertising/>
-        <p>
-          Promo Code? <Link to={'/'}>Enter Code</Link>
-        </p>
+        <Promo/>
       </div>
       <TotalPrice/>
     </section>
