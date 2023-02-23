@@ -4,6 +4,7 @@ import Asset from "../Asset/Asset";
 import Advertising from "../../Advertising/Advertising";
 import {Link} from "gatsby";
 import {useSelector} from "react-redux";
+import TotalPrice from "../../TotalPrice/TotalPrice";
 
 const Cart = () => {
   const products = useSelector(state => state.assets.product)
@@ -51,54 +52,7 @@ const Cart = () => {
           Promo Code? <Link to={'/'}>Enter Code</Link>
         </p>
       </div>
-      <div className={styles.cart__bottom}>
-        <ul>
-          <li>
-            <p>
-              <small>
-                Subtotal
-              </small>
-              <span>
-              $368.00
-            </span>
-            </p>
-          </li>
-          <li>
-            <p>
-              <small>
-                Shipping
-              </small>
-              <span>
-                  calculated next step
-                </span>
-            </p>
-          </li>
-          <li>
-            <p>
-              <small>
-                Discounts
-              </small>
-              <span>
-              -$22.15
-            </span>
-            </p>
-          </li>
-          <li className={styles.total}>
-            <p>
-              <small>
-                total
-              </small>
-              <span>
-                <strong>
-                  AUD
-                </strong>
-                $368.00
-              </span>
-            </p>
-          </li>
-        </ul>
-        <Link to={'/checkout'} className='myButton black'>Checkout now</Link>
-      </div>
+      <TotalPrice/>
     </section>
   );
 };
