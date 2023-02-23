@@ -17,7 +17,7 @@
     display: flex;
 
     &_img {
-      flex: 0 0 144px;
+      flex: 0 1 144px;
       height: 115px;
       margin: 0 17px 0 0;
 
@@ -29,19 +29,22 @@
     }
 
     &_data {
+      flex: 0 1;
       p {
         font-size: 18px;
         line-height: 25px;
         font-weight: 300;
         margin: 0 0 10px 0;
       }
-      span{
+
+      span {
         font-size: 18px;
         line-height: 25px;
         font-weight: 300;
         display: inline-block;
         width: 50%;
-        &:last-of-type{
+
+        &:last-of-type {
           text-decoration: line-through;
           opacity: .6;
         }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "gatsby";
 import * as styles from './header.module.scss'
-import logo from '../../../images/icons/logo.svg'
+import logo from '../../images/icons/logo.svg'
 
 const Header = ({title}) => {
   return (

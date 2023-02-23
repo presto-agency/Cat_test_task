@@ -1,7 +1,7 @@
 import * as React from "react"
 import "../styles/style.scss"
 import Layout from "../components/Layout";
-import Cart from "../components/UI/Cart/Cart";
+import Cart from "../components/Cart/Cart";
 
 export default function Home() {
   return(

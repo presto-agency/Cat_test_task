@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import * as styles from "./cart.module.scss"
 import Asset from "../Asset/Asset";
-import Advertising from "../../Advertising/Advertising";
+import Advertising from "../Advertising/Advertising";
 import {Link} from "gatsby";
 import {useSelector} from "react-redux";
-import TotalPrice from "../../TotalPrice/TotalPrice";
+import TotalPrice from "../TotalPrice/TotalPrice";
 
 const Cart = () => {
   const products = useSelector(state => state.assets.product)
