@@ -10,7 +10,7 @@ const Layout = ({children, title='CatTestTask'}) =>{
           {title}
         </title>
       </Helmet>
-      <div className='wrapper'>
+      <div className='wrapper active'>
         <Header/>
         {children}
       </div>

@@ -1,10 +1,27 @@
-body{
+body {
   background-color: $bg;
 }
 
 .wrapper {
   overflow: hidden;
   min-height: 100%;
+  width: 100vw;
+  height: 100vh;
+
+  &.active {
+    position: relative;
+
+    &:before {
+      content: '';
+      pointer-events: none;
+      z-index: 3;
+      position: absolute;
+      background-color: #000;
+      opacity: 0.3;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
 }
 
 .container {
@@ -14,7 +31,7 @@ body{
   box-sizing: content-box;
 }
 
-.root{
+.root {
   padding: 92px 0 0 0;
 }
 
