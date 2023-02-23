@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import * as styles from "./totalPrice.module.scss";
-import {Link} from "gatsby";
 
 const TotalPrice = ({products = []}) => {
-
   const [totalPrice, setTotalPrice] = useState(0)
+  const formatNum = (num) => (Math.round((num) * 100) / 100).toFixed(2);
+  let sumOfAssetsPrice = formatNum(totalPrice);
+  let discountPrice = formatNum((totalPrice/100)*10);
+
 
   useEffect(() => {
     setTotalPrice(0)
@@ -12,9 +14,6 @@ const TotalPrice = ({products = []}) => {
       setTotalPrice(prevPrice => prevPrice + (products[i].count * products[i].price))
     }
   }, [products, setTotalPrice])
-
-  // console.log('totalPrice'+ totalPrice)
-
 
   if (products.length === 0 && totalPrice === 0) {
     return <p>loading</p>
@@ -28,7 +27,7 @@ const TotalPrice = ({products = []}) => {
               Subtotal
             </small>
             <span>
-              ${totalPrice}
+              ${sumOfAssetsPrice}
             </span>
           </p>
         </li>
@@ -38,8 +37,8 @@ const TotalPrice = ({products = []}) => {
               Shipping
             </small>
             <span>
-                  calculated next step
-                </span>
+              calculated next step
+            </span>
           </p>
         </li>
         <li>
@@ -48,7 +47,7 @@ const TotalPrice = ({products = []}) => {
               Discounts
             </small>
             <span>
-              -$22.15
+              -${discountPrice}
             </span>
           </p>
         </li>
@@ -61,7 +60,7 @@ const TotalPrice = ({products = []}) => {
                 <strong>
                   AUD
                 </strong>
-                $368.00
+                ${sumOfAssetsPrice - discountPrice}
               </span>
           </p>
         </li>

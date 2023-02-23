@@ -7,20 +7,18 @@ import {setPrice} from "../../store/productReducer";
 
 const Asset = ({product = {}}) => {
   const dispatch = useDispatch()
-
   const [prod, setProduct] = useState(product)
-  // const totalPrice = (Math.round((price * count) * 100) / 100).toFixed(2);
+  const formatNum = (num) => (Math.round((num) * 100) / 100).toFixed(2);
 
 
   const decValue = () => {
     setProduct(prev => ({...prev, count: prev.count - 1}))
-    // dispatch(setPrice(product))
   }
 
   const incValue = () => {
     setProduct(prev => ({...prev, count: prev.count + 1}))
-    // dispatch(setPrice(product))
   }
+
   useEffect(() => {
     dispatch(setPrice(prod))
   }, [prod])
@@ -43,7 +41,7 @@ const Asset = ({product = {}}) => {
             <span>{prod.count}</span>
             <button className={styles.variant} onClick={incValue}></button>
           </div>
-          <span>{prod.count * prod.price}</span>
+          <span>{formatNum(prod.count * prod.price)}</span>
         </div>
       </div>
     </li>

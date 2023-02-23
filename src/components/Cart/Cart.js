@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import * as styles from "./cart.module.scss"
 import Asset from "../Asset/Asset";
 import Advertising from "../Advertising/Advertising";
@@ -8,30 +8,8 @@ import TotalPrice from "../TotalPrice/TotalPrice";
 import Promo from "../Promo/Promo";
 
 const Cart = () => {
-
   const products = useSelector(state => state.assets.product)
-  // const [total, setTotal] = useState([
-  //   {
-  //     id: 0,
-  //     total: 0
-  //   }
-  // ]);
 
-  // const returnTotal = (data) => {
-  //   let array2 = [...total]
-  //   array2.map((item) => {
-  //     if (item.id === data.id) {
-  //       item.total = data.total
-  //       setTotal(
-  //         [...array2]
-  //       )
-  //     } else {
-  //       setTotal(
-  //         [...total, data]
-  //       )
-  //     }
-  //   })
-  // }
   return (
     <section className={styles.cart}>
       <div className={styles.cart__top}>
@@ -41,7 +19,7 @@ const Cart = () => {
         <ul>
           {products.map(product => <Asset
             product={product}
-            // returnTotal={returnTotal}
+            key={product.id}
           />)}
         </ul>
         <Advertising/>

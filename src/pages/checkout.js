@@ -3,7 +3,6 @@ import Layout from "../components/Layout";
 import Asset from "../components/Asset/Asset";
 import {useSelector} from "react-redux";
 import TotalPrice from "../components/TotalPrice/TotalPrice";
-import {Link} from "gatsby";
 import MyButton from "../components/UI/MyButton/MyButton";
 import Advertising from "../components/Advertising/Advertising";
 import Promo from "../components/Promo/Promo";
@@ -24,6 +23,7 @@ const Checkout = () => {
                 <ul>
                   {products.map(product => <Asset
                     product={product}
+                    key={product.id}
                   />)}
                 </ul>
                 <Promo/>
