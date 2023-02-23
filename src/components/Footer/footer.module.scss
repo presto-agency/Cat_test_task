@@ -1,0 +1,23 @@
+.footer {
+  &__content {
+    &_top {
+      margin: 0 0 15px 0;
+
+      p {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 300;
+        text-align: center;
+      }
+    }
+
+    &_bottom {
+      display: flex;
+      justify-content: center;
+
+      img {
+        margin: 0 15px;
+      }
+    }
+  }
+}
