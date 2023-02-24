@@ -22,45 +22,20 @@ const Checkout = () => {
               </h3>
               <MyInput id='email' type='email' label='your email'/>
               <div className="inputWrapper">
-                <div className='inputContainer'>
-                  <input id='phone' type="tel"/>
-                  <label htmlFor="phone">
-                    mobile phone
-                  </label>
-                </div>
+                <MyInput id='phone' type='tel' label='mobile phone'/>
                 <p>
                   Your phone number is required for delivery & shipping updates.
                 </p>
               </div>
               <div className="inputWrapper">
-                <div className='inputContainer'>
-                  <input id='name' type="text"/>
-                  <label htmlFor="name">
-                    first name
-                  </label>
-                </div>
-                <div className='inputContainer'>
-                  <input id='lastname' type="email"/>
-                  <label htmlFor="lastname">
-                    last name
-                  </label>
-                </div>
+                <MyInput id='name' type='text' label='first name'/>
+                <MyInput id='lastname' type='email' label='last name'/>
               </div>
               <h3>
                 Delivery Details
               </h3>
-              <div className='inputContainer'>
-                <input id='country' type="text"/>
-                <label htmlFor="country">
-                  country
-                </label>
-              </div>
-              <div className='inputContainer'>
-                <textarea id='delivery address' type="text"/>
-                <label htmlFor="delivery address">
-                  delivery address
-                </label>
-              </div>
+              <MyInput id='country' type='text' label='country'/>
+              <MyInput id='delivery' label={'delivery address'}/>
               <h3>
                 Payment Details
               </h3>
