@@ -3,7 +3,25 @@
 
   &__content {
     display: flex;
-    h3{
+
+    @media(max-width: 1023px) {
+      flex-direction: column;
+      .checkout {
+        .navbar {
+          width: 100%;
+          flex: initial;
+        }
+
+        &__content {
+          &_form {
+            flex: initial;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    h3 {
       margin: 0 0 20px 0;
     }
 
