@@ -7,13 +7,14 @@ import MyButton from "../components/UI/MyButton/MyButton";
 import Advertising from "../components/Advertising/Advertising";
 import Promo from "../components/Promo/Promo";
 import MyInput from "../components/UI/inputs/MyInput";
+import MyRadio from "../components/UI/myRadio/myRadio";
 
 const Checkout = () => {
   const products = useSelector(state => state.assets.product)
-  const [selected, setSelected] = useState('free');
-  const handleChange = event => {
-    setSelected(event.target.value);
-  };
+  const [selected, setSelected] = useState(0);
+  const handleChange = (value) => {
+    setSelected(value)
+  }
 
   return (
     <Layout title={'Checkout'}>
@@ -41,35 +42,24 @@ const Checkout = () => {
               <MyInput id='country' type='text' label='country'/>
               <MyInput id='delivery' label={'delivery address'}/>
               <div className="radioWrapper">
-                <div className="myRadio">
-                  <div className="myRadio__container">
-                    <input onChange={handleChange} checked={selected === 'free'} id='free' name='radioButtons' type="radio" value='free'/>
-                    <label htmlFor='free'>
-                      Free Shipping
-                    </label>
-                  </div>
-                  <p>$0.00</p>
-                </div>
-                <div className="myRadio">
-                  <div className="myRadio__container">
-                    <input onChange={handleChange} checked={selected === 'standard'} id='standard' name='radioButtons' type="radio" value='standard'/>
-                    <label htmlFor='standard'>
-                      Standard Shipping
-                    </label>
-                  </div>
-                  <p>$10.00</p>
-                </div>
-                <div className="myRadio">
-                  <div className="myRadio__container">
-                    <input onChange={handleChange} checked={selected === 'express'} id='express' name='radioButtons' type="radio" value='express'/>
-                    <label htmlFor='express'>
-                      Express Shipping
-                    </label>
-                  </div>
-                  <p>
-                    $25.3
-                  </p>
-                </div>
+                <MyRadio
+                  label='Free Shipping'
+                  handleChange={handleChange}
+                  id='free'
+                  value={0}
+                  selected={selected}/>
+                <MyRadio
+                  label='Standard Shipping'
+                  handleChange={handleChange}
+                  id='standard'
+                  value={10}
+                  selected={selected}/>
+                <MyRadio
+                  label='Express Shipping'
+                  handleChange={handleChange}
+                  id='express'
+                  value={25.3}
+                  selected={selected}/>
               </div>
               <h3>
                 Payment Details
