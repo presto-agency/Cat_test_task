@@ -1,5 +1,6 @@
 .myRadio {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   font-size: 25px;
   line-height: 38px;
@@ -9,15 +10,20 @@
   margin: 5px 0 0 0;
 
   &__container {
-
     label {
       position: relative;
+      padding: 0 0 0 44px;
+      display: flex;
+      align-items: center;
       cursor: pointer;
 
       &:before {
         pointer-events: none;
         content: '';
-        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(calc(-50% - 2px));
         width: 24px;
         height: 24px;
         border-radius: 50%;
