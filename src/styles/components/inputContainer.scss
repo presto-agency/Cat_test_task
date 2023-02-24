@@ -59,6 +59,7 @@
 
     & + label {
       position: absolute;
+      pointer-events: none;
       bottom: 34px;
       left: 6px;
       font-size: 25px;

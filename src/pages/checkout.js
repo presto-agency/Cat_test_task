@@ -61,9 +61,6 @@ const Checkout = () => {
                   value={25.3}
                   selected={selected}/>
               </div>
-              <h3>
-                Payment Details
-              </h3>
             </div>
             <div className='navbar'>
               <h3>
