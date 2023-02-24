@@ -13,6 +13,20 @@
   .inputContainer {
     flex: 0 1 45%;
   }
+
+  @media (max-width: 1023px) {
+    margin: 0 0 50px 0;
+    flex-wrap: wrap;
+    > p {
+      flex: initial;
+      margin: 0;
+    }
+    .inputContainer {
+      width: 100%;
+      flex: initial;
+      margin: 0;
+    }
+  }
 }
 
 .inputContainer {

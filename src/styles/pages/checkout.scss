@@ -3,6 +3,9 @@
 
   &__content {
     display: flex;
+    h3{
+      margin: 0 0 20px 0;
+    }
 
     &_form {
       flex: 1 1;

@@ -1,0 +1,52 @@
+.myRadio {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  line-height: 38px;
+  font-weight: 400;
+  padding: 0 0 7px 0;
+  border-bottom: 1px dashed #000;
+  margin: 5px 0 0 0;
+
+  &__container {
+
+    label {
+      position: relative;
+      cursor: pointer;
+
+      &:before {
+        pointer-events: none;
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid #000;
+        margin: 0 18px 0 0;
+        transition: 300ms;
+      }
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+
+      &:checked {
+        + label {
+          &:before {
+            box-shadow: inset 0 0 0 4px #F1EEE9;
+            background: #000;
+          }
+        }
+      }
+    }
+  }
+
+  &:first-of-type {
+    margin: 0;
+  }
+}
+
+.radioWrapper {
+  margin: 55px 0;
+}

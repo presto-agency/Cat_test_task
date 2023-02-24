@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Layout from "../components/Layout";
 import Asset from "../components/Asset/Asset";
 import {useSelector} from "react-redux";
@@ -10,13 +10,17 @@ import MyInput from "../components/UI/inputs/MyInput";
 
 const Checkout = () => {
   const products = useSelector(state => state.assets.product)
+  const [selected, setSelected] = useState('free');
+  const handleChange = event => {
+    setSelected(event.target.value);
+  };
 
   return (
     <Layout title={'Checkout'}>
       <div className="checkout">
         <div className="container">
-          <div className="checkout__content">
-            <form action='#' className='checkout__content_form'>
+          <form action='#' className="checkout__content">
+            <div className='checkout__content_form'>
               <h3>
                 Your Details
               </h3>
@@ -36,10 +40,41 @@ const Checkout = () => {
               </h3>
               <MyInput id='country' type='text' label='country'/>
               <MyInput id='delivery' label={'delivery address'}/>
+              <div className="radioWrapper">
+                <div className="myRadio">
+                  <div className="myRadio__container">
+                    <input onChange={handleChange} checked={selected === 'free'} id='free' name='radioButtons' type="radio" value='free'/>
+                    <label htmlFor='free'>
+                      Free Shipping
+                    </label>
+                  </div>
+                  <p>$0.00</p>
+                </div>
+                <div className="myRadio">
+                  <div className="myRadio__container">
+                    <input onChange={handleChange} checked={selected === 'standard'} id='standard' name='radioButtons' type="radio" value='standard'/>
+                    <label htmlFor='standard'>
+                      Standard Shipping
+                    </label>
+                  </div>
+                  <p>$10.00</p>
+                </div>
+                <div className="myRadio">
+                  <div className="myRadio__container">
+                    <input onChange={handleChange} checked={selected === 'express'} id='express' name='radioButtons' type="radio" value='express'/>
+                    <label htmlFor='express'>
+                      Express Shipping
+                    </label>
+                  </div>
+                  <p>
+                    $25.3
+                  </p>
+                </div>
+              </div>
               <h3>
                 Payment Details
               </h3>
-            </form>
+            </div>
             <div className='navbar'>
               <h3>
                 Your order
@@ -57,7 +92,7 @@ const Checkout = () => {
               <MyButton className='myButton black' description={'Pay now'}/>
               <Advertising/>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </Layout>
