@@ -20,7 +20,7 @@ const Checkout = () => {
     <Layout title={'Checkout'}>
       <div className="checkout">
         <div className="container">
-          <form action='#' className="checkout__content">
+          <div className="checkout__content">
             <div className='checkout__content_form'>
               <h3>
                 Your Details
@@ -77,12 +77,12 @@ const Checkout = () => {
                   />)}
                 </ul>
                 <Promo/>
-                <TotalPrice products={products}/>
+                <TotalPrice products={products} selected={selected}/>
               </div>
               <MyButton className='myButton black' description={'Pay now'}/>
               <Advertising/>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </Layout>

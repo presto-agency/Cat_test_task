@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import * as styles from "./totalPrice.module.scss";
 
-const TotalPrice = ({products = []}) => {
+const TotalPrice = ({products = [], selected = null}) => {
   const [totalPrice, setTotalPrice] = useState(0)
   const formatNum = (num) => (Math.round((num) * 100) / 100).toFixed(2);
-  let sumOfAssetsPrice = formatNum(totalPrice);
-  let discountPrice = formatNum((totalPrice/100)*10);
+  let sumOfAssetsPrice = totalPrice;
+  let discountPrice = 20;
+  let shipping = Number(selected);
 
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const TotalPrice = ({products = []}) => {
               Subtotal
             </small>
             <span>
-              ${sumOfAssetsPrice}
+              ${formatNum(sumOfAssetsPrice)}
             </span>
           </p>
         </li>
@@ -37,7 +38,7 @@ const TotalPrice = ({products = []}) => {
               Shipping
             </small>
             <span>
-              calculated next step
+              ${selected === null ? 'calculated next step' : formatNum(shipping)}
             </span>
           </p>
         </li>
@@ -47,7 +48,7 @@ const TotalPrice = ({products = []}) => {
               Discounts
             </small>
             <span>
-              -${discountPrice}
+              -${formatNum(discountPrice)}
             </span>
           </p>
         </li>
@@ -60,7 +61,9 @@ const TotalPrice = ({products = []}) => {
                 <strong>
                   AUD
                 </strong>
-                ${sumOfAssetsPrice - discountPrice}
+              ${formatNum(selected === null
+              ? sumOfAssetsPrice - discountPrice
+              : sumOfAssetsPrice - discountPrice + shipping)}
               </span>
           </p>
         </li>

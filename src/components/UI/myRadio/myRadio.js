@@ -1,7 +1,6 @@
 import React from 'react';
 
 const MyRadio = ({handleChange, id, value, selected, label}) => {
-  const formatNum = (num) => (Math.round((num) * 100) / 100).toFixed(2);
 
   return (
     <div className="myRadio">
@@ -16,7 +15,7 @@ const MyRadio = ({handleChange, id, value, selected, label}) => {
           {label}
         </label>
       </div>
-      <p>${formatNum(value)}</p>
+      <p>${value}</p>
     </div>
   );
 };
