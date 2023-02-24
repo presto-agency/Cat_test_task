@@ -54,7 +54,7 @@ A quick look at the top-level files and directories you'll see in a typical Gats
     ├── node_modules
     ├── src
     ├── .gitignore
-    ├── gatsby-browser.js
+    ├── gatsby-ssr.js
     ├── gatsby-config.js
     ├── gatsby-node.js
     ├── gatsby-ssr.js
@@ -68,7 +68,7 @@ A quick look at the top-level files and directories you'll see in a typical Gats
 
 1.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-1.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+1.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
 1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/) for more detail).
 

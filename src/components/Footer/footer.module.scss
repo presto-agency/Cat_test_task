@@ -1,6 +1,8 @@
 .footer {
   padding: 0 0 100px 0;
   &__content {
+    display: flex;
+    flex-direction: column;
     &_top {
       margin: 0 0 15px 0;
 
