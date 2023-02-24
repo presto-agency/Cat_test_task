@@ -1,0 +1,72 @@
+.inputWrapper {
+  display: flex;
+  justify-content: space-between;
+
+  > p {
+    flex: 0 1 45%;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 300;
+    margin: 0 0 0 38px;
+  }
+
+  .inputContainer {
+    flex: 0 1 45%;
+  }
+}
+
+.inputContainer {
+  position: relative;
+  padding: 0 0 30px 0;
+  margin: 0 0 24px 0;
+
+  &.active {
+    input, textarea {
+      background-color: #fff;
+    }
+
+    label {
+      top: initial;
+      bottom: -4px;
+      font-size: 20px;
+      line-height: 22px;
+    }
+  }
+
+  input, textarea {
+    width: 100%;
+    font-size: 25px;
+    line-height: 38px;
+    font-weight: 400;
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+    padding: 0 6px;
+    transition: 300ms;
+
+    & + label {
+      position: absolute;
+      bottom: 34px;
+      left: 6px;
+      font-size: 25px;
+      line-height: 38px;
+      font-weight: 300;
+      transition: 300ms;
+    }
+
+    &:focus {
+      background-color: #fff;
+    }
+
+    &:focus + label {
+      top: initial;
+      bottom: -4px;
+      font-size: 20px;
+      line-height: 22px;
+    }
+  }
+
+  textarea {
+    height: 90px;
+    resize: none;
+  }
+}
