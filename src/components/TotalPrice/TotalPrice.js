@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from "react";
 import * as styles from "./totalPrice.module.scss";
 
 const TotalPrice = ({products = [], selected = null}) => {
   const [totalPrice, setTotalPrice] = useState(0)
   const formatNum = (num) => (Math.round((num) * 100) / 100).toFixed(2);
-  let sumOfAssetsPrice = totalPrice;
-  let discountPrice = 20;
-  let shipping = Number(selected);
+  const sumOfAssetsPrice = totalPrice;
+  const discountPrice = 20;
+  const shipping = Number(selected);
 
 
   useEffect(() => {
@@ -38,7 +38,9 @@ const TotalPrice = ({products = [], selected = null}) => {
               Shipping
             </small>
             <span>
-              ${selected === null ? 'calculated next step' : formatNum(shipping)}
+              ${selected === null
+              ? "calculated next step"
+              : formatNum(shipping)}
             </span>
           </p>
         </li>

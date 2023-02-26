@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import * as styles from "./cart.module.scss"
 import Asset from "../Asset/Asset";
 import Advertising from "../Advertising/Advertising";
@@ -8,7 +8,7 @@ import TotalPrice from "../TotalPrice/TotalPrice";
 import Promo from "../Promo/Promo";
 
 const Cart = () => {
-  const products = useSelector(state => state.assets.product)
+  const products = useSelector(state => state.assets.products)
 
   return (
     <section className={styles.cart}>
@@ -26,7 +26,7 @@ const Cart = () => {
         <Promo/>
       </div>
       <TotalPrice products={products}/>
-      <Link to={'/checkout'} className='myButton black'>Checkout now</Link>
+      <Link to={"/checkout"} className="myButton black">Checkout now</Link>
     </section>
   );
 };

@@ -1,6 +1,9 @@
-import React from 'react';
+import React from "react";
 
-const MyButton = ({description, className}) => {
+const MyButton = ({
+                    description,
+                    className
+                  }) => {
   return (
     <button className={className}>
       {description}

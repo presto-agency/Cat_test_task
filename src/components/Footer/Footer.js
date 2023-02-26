@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import * as styles from "./footer.module.scss"
-import iconOne from '../../../static/images/icon-footer-1.svg'
-import iconTwo from '../../../static/images/icon-footer-2.svg'
+import iconOne from "../../../static/images/icon-footer-1.svg"
+import iconTwo from "../../../static/images/icon-footer-2.svg"
 
 const Footer = () => {
   return (

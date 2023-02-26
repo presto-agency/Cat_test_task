@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import asset from "../../images/pictures/cat.webp";
 import * as styles from "./advertising.module.scss";
 
@@ -24,7 +24,7 @@ const Advertising = () => {
           <span>
             $129.00
           </span>
-          <MyButton className='myButton' description={'Add now'}/>
+          <MyButton className="myButton" description="Add now"/>
         </div>
       </div>
     </div>
