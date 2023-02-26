@@ -1,35 +1,4 @@
-.inputWrapper {
-  display: flex;
-  justify-content: space-between;
-
-  > p {
-    flex: 0 1 45%;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 300;
-    margin: 0 0 0 38px;
-  }
-
-  .inputContainer {
-    flex: 0 1 45%;
-  }
-
-  @media (max-width: 1023px) {
-    margin: 0 0 50px 0;
-    flex-wrap: wrap;
-    > p {
-      flex: initial;
-      margin: 0;
-    }
-    .inputContainer {
-      width: 100%;
-      flex: initial;
-      margin: 0;
-    }
-  }
-}
-
-.inputContainer {
+.myInput {
   position: relative;
   padding: 0 0 30px 0;
   margin: 0 0 24px 0;

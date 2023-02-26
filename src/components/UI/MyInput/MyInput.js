@@ -8,7 +8,7 @@ const MyInput = ({id, type = "text", label}) => {
   }
 
   return (
-    <div className={`inputContainer${inputValue === false ? "" : " active"}`}>
+    <div className={`myInput${inputValue === false ? "" : " active"}`}>
       {id === "delivery"
         ? <textarea id={id} onChange={(e) => checkIfEmpty(e)}/>
         : <input onChange={(e) => checkIfEmpty(e)} id={id} type={type}/>
