@@ -14,9 +14,11 @@ const defaultState = {
         src: "/images/green.webp",
         id: 1
       }],
+  shipping: 10
 }
 
 export const COUNT = "COUNT";
+export const SHIPPING = "SHIPPING";
 
 export const ProductReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -30,9 +32,14 @@ export const ProductReducer = (state = defaultState, action) => {
       return {
         ...state, products: newProduct
       }
+    case SHIPPING:
+      return {
+        ...state, shipping: action.payload
+      }
     default:
       return state
   }
 }
 
 export const setPrice = (payload) => ({type: COUNT, payload})
+export const setShipping = (payload) => ({type: SHIPPING, payload})

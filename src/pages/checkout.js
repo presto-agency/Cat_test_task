@@ -1,19 +1,22 @@
-import React, {useState} from "react";
+import React from "react";
 import Layout from "../components/Layout";
 import Asset from "../components/Asset/Asset";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import TotalPrice from "../components/TotalPrice/TotalPrice";
 import MyButton from "../components/UI/MyButton/MyButton";
 import Advertising from "../components/Advertising/Advertising";
 import Promo from "../components/Promo/Promo";
 import MyInput from "../components/UI/MyInput/MyInput";
 import MyRadio from "../components/UI/MyRadio/MyRadio";
+import {setShipping} from "../store/ProductReducer";
 
 const Checkout = () => {
+  const dispatch = useDispatch()
   const products = useSelector(state => state.assets.products)
-  const [selected, setSelected] = useState(0);
+  const shipping = useSelector(state => state.assets.shipping)
+
   const handleChange = (value) => {
-    setSelected(value)
+    dispatch(setShipping(value))
   }
 
   return (
@@ -70,19 +73,19 @@ const Checkout = () => {
                   handleChange={handleChange}
                   id="free"
                   value={0}
-                  selected={selected}/>
+                  selected={shipping}/>
                 <MyRadio
                   label="Standard Shipping"
                   handleChange={handleChange}
                   id="standard"
                   value={10}
-                  selected={selected}/>
+                  selected={shipping}/>
                 <MyRadio
                   label="Express Shipping"
                   handleChange={handleChange}
                   id="express"
                   value={25.3}
-                  selected={selected}/>
+                  selected={shipping}/>
               </div>
             </div>
             <div className="navbar">
@@ -99,7 +102,7 @@ const Checkout = () => {
                 <Promo/>
                 <TotalPrice
                   products={products}
-                  selected={selected}
+                  selected={shipping}
                 />
               </div>
               <MyButton
