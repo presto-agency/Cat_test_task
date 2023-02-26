@@ -18,7 +18,7 @@ const defaultState = {
 
 export const COUNT = "COUNT";
 
-export const productReducer = (state = defaultState, action) => {
+export const ProductReducer = (state = defaultState, action) => {
   switch (action.type) {
 
     case COUNT:

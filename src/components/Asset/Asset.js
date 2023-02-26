@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import * as styles from "./asset.module.scss"
 import {useDispatch} from "react-redux";
 
-import {setPrice} from "../../store/productReducer";
+import {setPrice} from "../../store/ProductReducer";
 
 
 const Asset = ({product = {}}) => {

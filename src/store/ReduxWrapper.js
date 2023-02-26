@@ -1,12 +1,12 @@
 import * as React from "react"
 import {combineReducers} from "redux";
-import {productReducer} from "./productReducer";
+import {ProductReducer} from "./ProductReducer";
 import {composeWithDevTools} from "redux-devtools-extension";
 import {Provider} from "react-redux";
 import {legacy_createStore as createStore} from "redux"
 
 const rootReducer = combineReducers({
-  assets: productReducer,
+  assets: ProductReducer,
 })
 
 const store = createStore(rootReducer, composeWithDevTools())

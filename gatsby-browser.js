@@ -1,3 +1,3 @@
-import {ReduxWrapper} from "./src/store/reduxWrapper";
+import {ReduxWrapper} from "./src/store/ReduxWrapper";
 
 export const wrapRootElement = ReduxWrapper;
