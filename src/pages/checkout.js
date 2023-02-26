@@ -104,7 +104,7 @@ const Checkout = () => {
               </div>
               <MyButton
                 className="myButton black"
-                description={"Pay now"}
+                description="Pay now"
               />
               <Advertising/>
             </div>
