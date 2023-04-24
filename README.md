@@ -52,4 +52,4 @@ yarn build
 
 deploy to Vercel: type vercel to command line
 
-deploy: [gh-pages](https://cat-test-task-kamarhinanton.vercel.app)
+deploy: [Vercel](https://cat-test-task-kamarhinanton.vercel.app)
